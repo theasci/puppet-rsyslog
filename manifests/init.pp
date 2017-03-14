@@ -267,16 +267,16 @@ class rsyslog (
   $protocol            = params_lookup( 'protocol' )
   ) inherits rsyslog::params {
 
-  $bool_source_dir_purge=any2bool($source_dir_purge)
-  $bool_service_autorestart=any2bool($service_autorestart)
-  $bool_absent=any2bool($absent)
-  $bool_disable=any2bool($disable)
-  $bool_disableboot=any2bool($disableboot)
-  $bool_monitor=any2bool($monitor)
-  $bool_puppi=any2bool($puppi)
-  $bool_firewall=any2bool($firewall)
-  $bool_debug=any2bool($debug)
-  $bool_audit_only=any2bool($audit_only)
+  $bool_source_dir_purge=str2bool($source_dir_purge)
+  $bool_service_autorestart=str2bool($service_autorestart)
+  $bool_absent=str2bool($absent)
+  $bool_disable=str2bool($disable)
+  $bool_disableboot=str2bool($disableboot)
+  $bool_monitor=str2bool($monitor)
+  $bool_puppi=str2bool($puppi)
+  $bool_firewall=str2bool($firewall)
+  $bool_debug=str2bool($debug)
+  $bool_audit_only=str2bool($audit_only)
 
   ### Definition of some variables used in the module
   $manage_package = $rsyslog::bool_absent ? {
